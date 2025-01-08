@@ -1,0 +1,532 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hum {
+    color: blue;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.name {
+    color: rgb(43, 226, 113);
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nid {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    color: #ffffff;
+    background-color: darkblue;
+}
+
+.nid .email {
+    font-size: 20px;
+    padding: 10px;
+}
+
+
+
+body {
+    background: linear-gradient(45deg, #7F00FF, #6100af, #E100FF, #f7ff00, #000046, #1CB5E0);
+    background-size: 400% 400%;
+    animation: gradientBackground 8s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+@keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+}
+
+
+
+
+/* Main Container */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* About Card Styling */
+.about-card {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-card img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Section Styling (Projects and Testimonials) */
+.section {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section h1, .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project CSS */
+.project {
+    background-color: blue;
+    color: #ffffff !important;
+    padding: 10px;
+}
+
+.mainpro {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping of items */
+    justify-content: space-between; /* Space between items */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.subpro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* Makes 3 items per row */
+    max-width: calc(33.33% - 20px);
+}
+
+/* Image Styling */
+.project-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.subpro:hover .project-img {
+    transform: scale(1.1);
+}
+
+/* Title Styling */
+@keyframes title-move {
+    0% {
+        color: red;
+    }
+    50% {
+        color: orange;
+    }
+    100% {
+        color: rgb(36, 1, 238);
+    }
+}
+
+.project-title {
+    padding: 10px;
+    border: 1px solid #610beb;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1d2020;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #f9fafa 50%, #027e6d 50%);
+    transition: background-position 1s ease;
+    background-size: 200% 100%; /* Make the gradient cover twice the width */
+    animation: title-move 3s infinite alternate; /* Bootstrap-er shathe animation */
+}
+.project-title:hover {
+    background-color: #ede9f1;
+    background-image: linear-gradient(to right, #049e70 50%, #ede9f1 50%); /* Create the gradient effect */
+    background-position: right center; /* On hover, move the gradient to the right */
+}
+
+
+ /* Animation for left-to-right and right-to-left movement */
+ @keyframes move-left-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Move slightly to the right */
+    }
+    100% {
+        transform: translateX(-10px); /* Move slightly to the left */
+    }
+}
+
+@keyframes move-right-left {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px); /* Move slightly to the left */
+    }
+    100% {
+        transform: translateX(10px); /* Move slightly to the right */
+    }
+}
+
+/* Apply animations */
+.project-card:nth-child(odd) {
+    animation: move-left-right 3s infinite ease-in-out;
+}
+
+.project-card:nth-child(even) {
+    animation: move-right-left 3s infinite ease-in-out;
+}
+
+
+/* Default Horizontal Scroll for Desktop */
+.desktop-scroll {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scroll */
+    gap: 1rem; /* Space between cards */
+    padding: 10px;
+}
+
+.desktop-scroll .project-card {
+    flex: 0 0 80%; /* Each card takes 80% width of the viewport */
+    max-width: 300px; /* Max width of cards */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Carousel (Visible on Both Desktop and Mobile) */
+#projectCarousel {
+    display: block; /* Show carousel by default */
+}
+
+/* Hide Horizontal Scroll on Mobile */
+@media (max-width: 767px) {
+    .desktop-scroll {
+        display: none; /* Hide desktop scroll on mobile */
+    }
+}
+
+#projectCarousel {
+    display: none; /* Hide carousel by default */
+}
+
+/* Show Carousel on Mobile */
+@media (max-width: 767px) {
+    #projectCarousel {
+        display: block; /* Show carousel on mobile */
+    }
+}
+
+.p{
+    font-size: 10px;
+}
+.a{
+    text-decoration: none !important;
+}
+
+
+/* navbar */
+
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .navbar {
+    animation: slideIn 0.8s ease-out;
+  }
+  .nav-item{
+    margin-right: 10px !important;
+    padding: 10px;
+  }
+
+  /* Nav items animation */
+  .navbar-nav .nav-item {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .navbar-nav .nav-item:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+
+  .navbar-nav .nav-item:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .navbar-nav .nav-item:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+
+  .navbar-nav .nav-item:nth-child(4) {
+    animation-delay: 0.9s;
+  }
+
+  /* Fade-in effect for navbar items */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+/* Apply shadow transition to navbar */
+.navbar {
+    box-shadow: 0 4px 8px rgba(151, 71, 255, 0.3); /* Initial shadow */
+    transition: box-shadow 1s ease-in-out; /* Smooth transition for box-shadow */
+  }
+
+  /* On hover or on page load, animate shadow color */
+  .navbar:hover {
+    box-shadow: 0 6px 25px rgba(0, 255, 255, 0.6); /* Deeper cyan shadow when hovered */
+  }
+
+  /* Animation for changing shadow color periodically */
+  @keyframes shadowColorChange {
+    0% {
+      box-shadow: 0 4px 8px rgba(255, 99, 71, 0.8); /* Coral color */
+    }
+    25% {
+      box-shadow: 0 4px 8px rgba(75, 0, 130, 0.8); /* Purple shadow */
+    }
+    50% {
+      box-shadow: 0 4px 8px rgba(0, 255, 255, 0.8); /* Cyan shadow */
+    }
+    75% {
+      box-shadow: 0 4px 8px rgba(189, 0, 104, 0.8); /* Yellow shadow */
+    }
+    100% {
+      box-shadow: 0 4px 8px rgba(44, 5, 218, 0.8); /* Coral shadow back */
+    }
+  }
+
+  /* Apply the animation to the navbar */
+  .navbar {
+    animation: shadowColorChange 6s ease-in-out infinite; /* 6s duration with infinite loop */
+  }
+
+.font{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-style: bold;
+    font-weight: 400;
+}
+.namesize{
+    font-size: 40px;
+}
+
+footer a:hover {
+    color: #ff9800; /* Highlight color on hover */
+    text-decoration: underline;
+}
+
+
+.gradient-animation {
+    background: linear-gradient(90deg, #1590b6, #6100af, #f8e803);
+    background-size: 300% 300%; /* Makes the gradient flow smoothly */
+    animation: spin-slow 6s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      transform: rotate(360deg);
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Animation for color changing */
+  @keyframes multiColor {
+    0% { color: #ff0000; }
+    5% { color: #ff7300; }
+    10% { color: #ffeb00; }
+    15% { color: #91ff00; }
+    20% { color: #00ff00; }
+    25% { color: #00ff91; }
+    30% { color: #00ffff; }
+    35% { color: #0091ff; }
+    40% { color: #0000ff; }
+    45% { color: #7300ff; }
+    50% { color: #eb00ff; }
+    55% { color: #ff0091; }
+    60% { color: #ff0044; }
+    65% { color: #ff7700; }
+    70% { color: #ffde00; }
+    75% { color: #91ff44; }
+    80% { color: #00ff88; }
+    85% { color: #00aaff; }
+    90% { color: #7700ff; }
+    95% { color: #ff0077; }
+    100% { color: #ff0000; }
+}
+
+/* Apply animation to icons */
+.social-icon {
+    font-size: 2rem;
+    animation: multiColor 5s infinite;
+    transition: transform 0.3s;
+}
+
+/* Hover effect */
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+@keyframes iconShake {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-2px, -2px); }
+    20% { transform: translate(2px, 2px); }
+    30% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    50% { transform: translate(0, 0); }
+}
+
+/* Apply Animation to Icons */
+.social-icon1 {
+    animation: iconShake 1s infinite;
+    
+    transition: transform 0.3s;
+}
+
+@keyframes buttonColorAnimation {
+    0% { background-color: #ff0000;
+    color: white; }
+    2% { background-color: #ff2a00; color: white;}
+    4% { background-color: #8E0E00; color: white;}
+    6% { background-color: #ff7f00; color: white;}
+    8% { background-color: #ffaa00; color: white;}
+    10% { background-color: #ffcc00; color: white;}
+    12% { background-color: #ffee00; color: white;}
+    14% { background-color: #d1ff00; color: white;}
+    16% { background-color: #a3ff00; color: white;}
+    18% { background-color: #76ff00; color: white;}
+    20% { background-color: #48ff00; color: white;}
+    22% { background-color: #1bff00; color: white;}
+    24% { background-color: #00ff2a; color: white;}
+    26% { background-color: #00ff55; color: white;}
+    28% { background-color: #00ff7f; color: white;}
+    30% { background-color: #00ffaa; color: white;}
+    32% { background-color: #00ffcc; color: white;}
+    34% { background-color: #00ffee; color: white;}
+    36% { background-color: #00d1ff; color: white;}
+    38% { background-color: #00a3ff; color: white;}
+    40% { background-color: #0076ff; color: white;}
+    42% { background-color: #0048ff; color: white;}
+    44% { background-color: #0100ff; color: white;}
+    46% { background-color: #2a00ff; color: white;}
+    48% { background-color: #5500ff; color: white;}
+    50% { background-color: #7f00ff; color: white;}
+    52% { background-color: #aa00ff; color: white;}
+    54% { background-color: #cc00ff; color: white;}
+    56% { background-color: #ee00ff; color: white;}
+    58% { background-color: #d100ff; color: white;}
+    60% { background-color: #a300ff; color: white;}
+    62% { background-color: #7600ff; color: white;}
+    64% { background-color: #4800ff; color: white;}
+    66% { background-color: #1b00ff; color: white;}
+    68% { background-color: #2a00cc; color: white;}
+    70% { background-color: #5500cc; color: white;}
+    72% { background-color: #7f00cc; color: white;}
+    74% { background-color: #aa00cc; color: white;}
+    76% { background-color: #cc00cc; color: white;}
+    78% { background-color: #ee00cc; color: white;}
+    80% { background-color: #d100cc; color: white;}
+    82% { background-color: #a300cc; color: white;}
+    84% { background-color: #7600cc; color: white;}
+    86% { background-color: #4800cc; color: white;}
+    88% { background-color: #1b00cc; color: white;}
+    90% { background-color: #2a00aa; color: white;}
+    92% { background-color: #5500aa; color: white;}
+    94% { background-color: #7f00aa; color: white;}
+    96% { background-color: #aa00aa; color: white;}
+    98% { background-color: #cc00aa; color: white;}
+    100% { background-color: #ee00aa; color: white;}
+}
+
+.animated-button {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: buttonColorAnimation 10s linear infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.animated-button:hover {
+    transform: scale(1.1);
+}
+  
